@@ -5,9 +5,11 @@ using namespace std;
 int main()
 {
     int choose = 2;
+    setlocale(LC_ALL, "RU");
     while (choose > 0 and choose <= 6) {
         cin >> choose;
         if (choose == 2) {
+            cout << "Введите инт (число) ";
             int a;
             unsigned int mask = 1 << 31; // 10000000000000000000000
             cin >> a;
@@ -27,10 +29,13 @@ int main()
             }
         }
         if (choose == 3) {
-            union {
+            
+            union 
+            {
                 int b;
                 float c;
             };
+            cout << "Введите Флоат (число с плавающей точкой) \n";
             unsigned int mask = 1 << 31; // 1000000000000000000
             cin >> c;
             for (int i = 1; i <= 32; i++) {
@@ -51,11 +56,15 @@ int main()
 
         }
         if (choose == 4) {
-            union {
+            
+            union 
+            {
                 unsigned int a[2];
                 double d;
             };
+            cout << "Введите дабл ";
             cin >> d;
+            
             for (int i = 1; i >= 0; i--) {
                 unsigned int mask = 1 << 31;
                 for (int j = 0; j <= 31; j++) {
@@ -77,7 +86,7 @@ int main()
                 }
             }
         }
-
+        cout << "\n";
 
                 if (choose == 1) {
                     cout <<
@@ -88,6 +97,7 @@ int main()
                         "double: " << sizeof(double) << '\n' <<
                         "long double: " << sizeof(long double) << '\n' <<
                         "char: " << sizeof(char) << '\n' <<
+                 
                         "bool: " << sizeof(bool) << '\n';
                 }
             }
